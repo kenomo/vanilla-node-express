@@ -1,0 +1,83 @@
+{
+    "name": "vanilla_backend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start:dev": "nodemon -L",
+        "build": "ts-node build.ts && tsc --build tsconfig.prod.json",
+        "lint": "eslint . --ext .ts",
+        "start": "node -r module-alias/register ./build --env=production"
+    },
+    "dependencies": {
+        "body-parser": "latest",
+        "command-line-args": "latest",
+        "connect-redis": "latest",
+        "cookie-parser": "latest",
+        "cors": "latest",
+        "dotenv": "latest",
+        "express": "latest",
+        "express-async-errors": "latest",
+        "express-session": "latest",
+        "helmet": "latest",
+        "http-status-codes": "latest",
+        "jet-logger": "latest",
+        "module-alias": "latest",
+        "morgan": "latest",
+        "redis": "latest",
+        "ts-node": "latest",
+        "tsconfig-paths": "latest",
+        "url-join": "latest"
+    },
+    "devDependencies": {
+        "@types/command-line-args": "latest",
+        "@types/connect-redis": "latest",
+        "@types/cookie-parser": "latest",
+        "@types/cors": "latest",
+        "@types/express": "latest",
+        "@types/express-session": "latest",
+        "@types/find": "latest",
+        "@types/fs-extra": "latest",
+        "@types/helmet": "latest",
+        "@types/morgan": "latest",
+        "@types/node": "latest",
+        "@types/url-join": "latest",
+        "@typescript-eslint/eslint-plugin": "latest",
+        "@typescript-eslint/parser": "latest",
+        "bindings": "latest",
+        "eslint": "latest",
+        "find": "latest",
+        "fs-extra": "latest",
+        "nodemon": "latest",
+        "typescript": "latest"
+    },
+    "_moduleAliases": {
+        "@shared": "build/Shared/",
+        "@modules": "build/Modules/",
+        "@routes": "build/Routes/",
+        "@config": "build/Config/",
+        "@server": "build/Server"
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src"
+        ],
+        "ext": "ts, html",
+        "ignore": [],
+        "exec": "ts-node -r tsconfig-paths/register ./src"
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/recommended",
+            "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        ],
+        "parserOptions": {
+            "project": "./tsconfig.json"
+        }
+    },
+    "eslintIgnore": []
+}
