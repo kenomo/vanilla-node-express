@@ -3,19 +3,18 @@ import "express-async-errors";
 import BaseRouter from "@routes/BaseRouter";
 import Settings from "@modules/Settings";
 import Session from "@modules/Session";
+import { StatusCodes } from "http-status-codes";
 
 
-const app = express();
+const { INTERNAL_SERVER_ERROR } = StatusCodes;
+const app: express.Express = express();
 
-// Modules.
+
 Settings(app);
 Session(app);
 
 // Routes.
-app.use("/test", (req, res) => {
-    res.send(req.originalUrl);
-});
-app.use("/api", BaseRouter);
+app.use(BaseRouter);
 
 // Export express instance.
 export default app;

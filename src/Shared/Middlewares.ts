@@ -1,11 +1,8 @@
-import logger from "jet-logger";
-import {NextFunction, Request, Response} from "express";
+import { NextFunction, Request, Response } from "express";
 import StatusCodes from "http-status-codes";
-import Deltas from "@config/Config";
 
 
-const { INTERNAL_SERVER_ERROR, BAD_REQUEST, OK, FORBIDDEN } = StatusCodes;
-
+const { FORBIDDEN } = StatusCodes;
 
 export default class Middlewares {
 
